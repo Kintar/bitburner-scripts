@@ -1,23 +1,35 @@
 import { NS, Server } from '@ns';
 
-export async function main(/* ns: NS */): Promise<void> {
-  throw new Error('Do not run me manually!');
-}
-
-export interface ServerMap {
+export class ServerMap {
   servers: Record<string, Server>;
-  lastUpdateTimestamp: number;
+  lastUpdate: number;
+
+  constructor() {
+    this.servers = {};
+    this.lastUpdate = 0;
+  }
+
+  usableHosts(): string[] {
+    const usables = [];
+    for (const hostname in this.servers) {
+      if (this.servers[hostname].hasAdminRights) {
+        usables.push(hostname);
+      }
+    }
+
+    return usables;
+  }
 }
 
-export class Common {
-  public readonly ns: NS;
-  public servers: ServerMap;
-
-  constructor(ns: NS) {
-    this.ns = ns;
-    this.servers = {
-      servers: {},
-      lastUpdateTimestamp: 0,
-    };
+export function localeTimestamp(ms = 0) {
+  if (!ms) {
+    ms = new Date().getTime();
   }
+
+  return new Date(ms).toLocaleTimeString();
+}
+
+export function log(ns: NS, message: string) {
+  ns.tprint(`[${localeTimestamp()}] ${message}`);
+  ns.print(`[${localeTimestamp()}] ${message}`);
 }
