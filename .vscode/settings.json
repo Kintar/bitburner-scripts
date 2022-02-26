@@ -22,6 +22,5 @@
       "pattern": "**/*.ts",
       "snippet": "ns-template"
     }
-  ],
-  "bitburner.authToken": "mDK8cpdeaCFT1MBOlxzSly9OxLg+Lu2gj0rupvc1PaWeFjzsxD0OCvstkWzm6SaH"
+  ]
 }

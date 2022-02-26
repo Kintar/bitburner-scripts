@@ -26,9 +26,11 @@ module.exports = {
     },
   ],
   rules: {
+    'no-undef': "error",
     'no-var': 'error',
     'no-return-await': 'off',
     'no-constant-condition': 'off',
+    '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/promise-function-async': 'warn',
     '@typescript-eslint/return-await': 'warn',
     '@typescript-eslint/no-confusing-void-expression': 'error',
