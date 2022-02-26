@@ -1,6 +1,6 @@
 import { NS } from '@ns';
 import { findAllServers } from 'lib/helpers';
-import { log } from 'lib/common';
+import { nslog } from 'lib/common';
 
 const PortHacks = ['BruteSSH.exe', 'FTPCrack.exe', 'HTTPWorm.exe', 'SQLInject.exe', 'relaySMTP.exe'];
 
@@ -27,7 +27,7 @@ export async function main(ns: NS): Promise<void> {
         host.hasAdminRights = true;
         await ns.scp(ns.ls('home', '.js'), hostname);
       } else {
-        log(ns, `Could not breach ${hostname}`);
+        nslog(ns, `Could not breach ${hostname}`);
       }
     }
   }

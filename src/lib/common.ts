@@ -29,7 +29,7 @@ export function localeTimestamp(ms = 0) {
   return new Date(ms).toLocaleTimeString();
 }
 
-export function log(ns: NS, message: string) {
+export function nslog(ns: NS, message: string) {
   ns.tprint(`[${localeTimestamp()}] ${message}`);
   ns.print(`[${localeTimestamp()}] ${message}`);
 }
