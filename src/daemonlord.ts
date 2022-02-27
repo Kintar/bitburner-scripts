@@ -19,8 +19,6 @@ enum LordState {
   Dead,
 }
 
-type LordStateStrings = keyof typeof LordState;
-
 class DaemonLord {
   STATE_KEY = 'LordState';
   stateData: StateData;
