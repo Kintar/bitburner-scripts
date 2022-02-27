@@ -93,18 +93,6 @@ class DaemonLord {
     }
   }
 
-  findTarget() {
-    const efficiency = 0;
-    const target = '';
-    for (const h of this.serverMap.usableHosts()) {
-      const serv = this.serverMap.servers[h];
-      const maxMoney = serv.moneyMax;
-      const minDiff = serv.minDifficulty;
-      const hackAmount = this.ns.hackAnalyze(h);
-      const hackTime = this.ns.getHackTime(h);
-    }
-  }
-
   weaken() {
     throw new Error('not implemented');
   }
