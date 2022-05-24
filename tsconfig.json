@@ -14,7 +14,6 @@
     "inlineSourceMap": true,
     "sourceRoot": "http://localhost:8000/sources/",
     "strict": true,
-    "rootDir": "src/",
     "outDir": "dist/",
     "baseUrl": "src/",
     "paths": {
